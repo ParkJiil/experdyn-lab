@@ -12,7 +12,11 @@
 <script>
 // Add new experiments to this array. Each experiment can contain multiple YouTube video IDs.
 const experiments=[
-  {title:'UAV Flight Experiment',description:'Drone flight demonstration.',videos:['uoj6PoMBN3I','I84otja-qTE']}
+  {
+    title:'UAV LiDAR SLAM Experiment',
+    description:'LiDAR-based mapping and localization using an autonomous UAV.',
+    videos:['uoj6PoMBN3I','I84otja-qTE']
+  }
 ];
 const grid=document.getElementById('galleryGrid'),modal=document.getElementById('modal'),player=document.getElementById('player');let currentExperiment=null,currentIndex=0;
 experiments.forEach((exp,i)=>{const card=document.createElement('button');card.type='button';card.className='gallery-item';card.innerHTML=`<div class="gallery-ph"><img src="https://i.ytimg.com/vi/${exp.videos[0]}/hqdefault.jpg" alt="${exp.title} video thumbnail" loading="lazy"><span class="play-icon" aria-hidden="true">▶</span><span class="video-count">${exp.videos.length} video${exp.videos.length>1?'s':''}</span></div><div class="gallery-cap"><b>${exp.title}</b><div>${exp.description}</div></div>`;card.addEventListener('click',()=>openExperiment(i));grid.appendChild(card)});
